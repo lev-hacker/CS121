@@ -1,8 +1,8 @@
-#Hello!
+# Hello!
 
-##My name is Lev (they/them)
+## My name is Lev (they/them)
 
-###I'm a second-year Computer and Information Technology student. This is *technically* my 3rd college-level CS class. (I only half-count the AP class I took in high school)
+### I'm a second-year Computer and Information Technology student. This is *technically* my 3rd college-level CS class. (I only half-count the AP class I took in high school)
 
 This semester, I hope to strengthen my already existing coding skills. I haven't had a CS class since first semester of last year, so I also want to refresh my current skills, which will *hopefully* not be very hard.
 
