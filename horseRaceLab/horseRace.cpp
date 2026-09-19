@@ -1,51 +1,56 @@
-# Variables
-```
-horses --> array of all horses
-horseNum --> represents one horse, helps point to a scpecific part of the horses array
-
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
 
-void advance(int horseNum, int* horses); //moves the horse forward one spot
+int advance(int horseNum, int* horses); //moves the horse forward one spot
 void printLane(int horseNum, int *horses); //prints one horse's lane
 bool isWinner(int horseNum, int *horses); //checks to see if horse won or not, returns boolean
 
-main(){
-    int horses[5] = {0};
-    keepGoing = true;
-    while(keepGoing){
-	    for(i = 0, i <= 5, i++){
-		    horseNum = i;
-		    advance();
-		    printLane();
-		    if isWinner() = true{
-			    keepGoing = false;
-		    }
-		    std::cout << "Press ENTER to continue" << std::endl;
-		    cin >> 
-            ask user for input to start next turn
-	    } //ends for
-    } //ends wile
+int advance(int horseNum, int* horses){
+    int newPosition = 0;
+    int coin = rand() % 2;
+    newPosition = horses[horseNum] + coin;
+    return newPosition;
+} //ends advance
+
+void printLane(int horseNum, int* horses){
+    int position = horses[horseNum];
+    int i = 0;
+    for (i = 0; i<=15; i++){
+	    if (i == position){
+		    std::cout << horseNum;
+	    }else{
+		    std::cout << ".";
+	    }
+    }
+    std::cout << std::endl;
+} //ends printLane
+
+bool isWinner(int horseNum, int* horses){
+    bool result;
+    int position = horses[horseNum];
+    if (position >= 15){
+        result = true;
+    };
+    return result;
+} //ends isWinner
+
+int main(){
+	srand(time(NULL));
+	int horses[5] = {0};
+	bool keepGoing = true;
+	while (keepGoing){
+		int i = 0;
+		for (i=0; i<=4; i++){
+			int horseNum = i;
+			horses[horseNum] = advance(horseNum, horses);
+			printLane(horseNum, horses);
+			if (isWinner(horseNum, horses) == true){
+				keepGoing = false;
+				std::cout << "Horse " << horseNum << " wins!" << std::endl;
+			} //ends if
+		} //ends for
+		std::cout << "Press enter to continue" << std:: endl;
+		std::cin.get();
+	} //ends while
 } //ends main
-
-advance(int horseNum, int* horses){
-    roll a 0 or 1 value at random, assign to coin
-    add coint to horse position value in array horses using horseNum
-}
-
-printLane(int horseNum, int* horses){
-    int postion = horse's position value from array
-    int beforeHorse = position - 1
-    int afterHorse = 15 - position
-    cout srting(beforeHorse, "."), horseNum, string(afterHorse, "."), endl
-}
-
-isWinner(int horseNum, int* horses){
-    bool result
-    int position = horse's position value from array
-    if position > 15:
-        result = true
-    return result
-}
-```
