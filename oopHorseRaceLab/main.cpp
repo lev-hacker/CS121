@@ -1,7 +1,8 @@
 #include <iostream>
-#include "horse.h"
 #include <cstdlib>
 #include <ctime>
+#include "horse.h"
+#include "race.h"
 
 void testHorse();
 
