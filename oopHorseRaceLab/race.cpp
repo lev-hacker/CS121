@@ -15,7 +15,7 @@ Race::Race(){
 int Race::start(){
 	bool keepGoing = true;
 	while (keepGoing){
-		for (i = 0; i < Race::NUM_HORSES; i++){
+		for (int i = 0; i < Race::NUM_HORSES; i++){
 			Horse::advance();
 			Horse::printLane();
 			if (Horse::isWinner == true){
